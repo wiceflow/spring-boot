@@ -44,6 +44,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <!--<configuration>-->
+                    <!-- 指定启动类 -->
                     <!--<mainClass>com.wiceflow.ServletMethodApplication</mainClass>-->
                 <!--</configuration>-->
             </plugin>
