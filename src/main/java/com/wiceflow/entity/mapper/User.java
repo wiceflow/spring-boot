@@ -14,7 +14,7 @@ public class User {
     @NotNull(message = "age is null")
     private String age;
     private String phone;
-    @Email(message = "email is error")
+    @Email
     private String email;
 
     public String getName() {
