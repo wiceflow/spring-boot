@@ -9,6 +9,8 @@ import javax.validation.constraints.NotNull;
  */
 public class User {
 
+
+
     @NotNull(message = "name is null")
     private String name;
     @NotNull(message = "age is null")
@@ -16,6 +18,9 @@ public class User {
     private String phone;
     @Email
     private String email;
+
+    public User() {
+    }
 
     public String getName() {
         return name;
@@ -47,5 +52,16 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", age='" + age + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

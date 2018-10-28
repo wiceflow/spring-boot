@@ -20,9 +20,9 @@ import javax.servlet.http.HttpServletRequest;
  * @author BF
  * @date 2018/10/27
  */
-@Aspect     // 声明这是一个切面类
-@Order(1)   // 设置切面优先级:如果多个切面,可通过优先级控制斜面的执行顺序(数值越小,优先级越高)
-@Component  // 把 ParameterVerificationAspectJ 注册成bean,放到IOC容器中
+//@Aspect     // 声明这是一个切面类
+//@Order(1)   // 设置切面优先级:如果多个切面,可通过优先级控制斜面的执行顺序(数值越小,优先级越高)
+//@Component  // 把 ParameterVerificationAspectJ 注册成bean,放到IOC容器中
 public class ParameterVerificationAspectJ {
     /**
      * slf4j 日志接口
@@ -96,7 +96,7 @@ public class ParameterVerificationAspectJ {
                 }
             }
             if (isError){
-                throw new RRException(errorMessage.toString());
+                throw new RRException(errorMessage.toString(),401);
             }else {
                 return joinPoint.proceed(joinPoint.getArgs());
             }
