@@ -1,10 +1,10 @@
 package com.wiceflow.util;
 
-import com.alibaba.fastjson.JSONObject;
 import com.wiceflow.exception.RRException;
-import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.*;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,9 +20,9 @@ import javax.servlet.http.HttpServletRequest;
  * @author BF
  * @date 2018/10/27
  */
-//@Aspect     // 声明这是一个切面类
-//@Order(1)   // 设置切面优先级:如果多个切面,可通过优先级控制斜面的执行顺序(数值越小,优先级越高)
-//@Component  // 把 ParameterVerificationAspectJ 注册成bean,放到IOC容器中
+@Aspect     // 声明这是一个切面类
+@Order(1)   // 设置切面优先级:如果多个切面,可通过优先级控制斜面的执行顺序(数值越小,优先级越高)
+@Component  // 把 ParameterVerificationAspectJ 注册成bean,放到IOC容器中
 public class ParameterVerificationAspectJ {
     /**
      * slf4j 日志接口

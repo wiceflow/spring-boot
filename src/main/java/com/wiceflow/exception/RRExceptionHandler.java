@@ -17,8 +17,8 @@ public class RRExceptionHandler {
 	 */
 	@ExceptionHandler(RRException.class)
 	public AjaxResult handleRRException(RRException e){
+		logger.error("异常统一管理处打印异常信息：" + e.getMessage());
 		if (e.getCode() != 500){
-
 		    return AjaxResult.customResponse(e.getCode(),e.getMessage(),null);
         }
 		return AjaxResult.errorResponse(e.getMsg());
@@ -26,7 +26,8 @@ public class RRExceptionHandler {
 
 	@ExceptionHandler(Exception.class)
 	public AjaxResult handleException(Exception e){
-//		logger.error(e.getMessage(), e);
+		// 控制台打印错误信息
+		e.printStackTrace();
 		return AjaxResult.errorResponse(e.getMessage());
 	}
 }
